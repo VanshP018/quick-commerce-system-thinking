@@ -6,12 +6,75 @@ import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 const CaseStudy = () => {
+  // Leverage points data extracted from the image
+  const leveragePointsData = [
+    {
+      point: "Ethical Delivery Metrics",
+      category: "Information Flows (#6)",
+      importance: "Provides consumers visibility into ethical and sustainable delivery data",
+      impact: "Drives demand for sustainable practices"
+    },
+    {
+      point: "Stable, Fair Pay Models",
+      category: "Rules of the System (#5)",
+      importance: "Improves worker stability",
+      impact: "Reduces burnout and turnover"
+    },
+    {
+      point: "Zoning Support for Micro-Hubs",
+      category: "Structure of Stocks and Flows (#10)",
+      importance: "Optimizes local delivery",
+      impact: "Cuts emissions and traffic"
+    },
+    {
+      point: "Composite KPIs",
+      category: "Goals of the System (#3)",
+      importance: "Shifts focus from speed alone",
+      impact: "Balances speed, fairness, sustainability"
+    },
+    {
+      point: "Sustainability as Brand Value",
+      category: "Paradigm (#2)",
+      importance: "Reframes green as profitable",
+      impact: "Drives long-term value and eco-consciousness"
+    }
+  ];
+
+  // System structure transition data extracted from the image
+  const systemStructureData = [
+    {
+      current: "Centralized hub-and-spoke networks focused on speed",
+      future: "Neighborhood-based micro-hubs with multi-modal options",
+      enableShift: "Offer zoning support and local subsidies for distributed storage and last-mile networks"
+    },
+    {
+      current: "Gig-based compensation tied to algorithmic speed metrics",
+      future: "Stable, fair-pay models with earnings floor and benefits",
+      enableShift: "Mandate base pay, introduce tenure rewards, and enable shared worker insurance via platforms"
+    },
+    {
+      current: "Workers treated as replaceable contractors",
+      future: "Workers as partners in governance and operations",
+      enableShift: "Set up worker councils, involve them in feedback loops and delivery planning"
+    },
+    {
+      current: "Speed-only performance metrics",
+      future: "Composite metrics (speed + sustainability + worker well-being)",
+      enableShift: "Revise internal KPIs, show ethical delivery score at consumer checkout"
+    },
+    {
+      current: "Viewing sustainability as a cost burden",
+      future: "Treating sustainability as a brand and economic value driver",
+      enableShift: "Provide carbon-labeling incentives and reward sustainable consumer choices"
+    }
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
       <section className="bg-gradient-to-r from-[#1A1F2C] to-[#2A3042] text-white py-16">
         <div className="container mx-auto px-6">
-          <h1 className="text-4xl font-bold mb-6 text-center">Leverage Points & System Redesign</h1>
+          <h1 className="text-4xl font-bold mb-6 text-center animate-fade-in">Leverage Points & System Redesign</h1>
           <p className="text-lg max-w-3xl mx-auto text-center text-gray-300">
             Identifying the most effective intervention points to transform quick commerce for sustainability and fairness
           </p>
@@ -22,21 +85,15 @@ const CaseStudy = () => {
       <section className="py-16 bg-white" id="leverage">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-[#1A1F2C] border-b pb-4">Leverage Points Analysis</h2>
+            <h2 className="text-3xl font-bold mb-8 text-[#1A1F2C] border-b pb-4 animate-fade-in">Leverage Points Analysis</h2>
             
             <div className="mb-10">
               <p className="text-lg mb-6 text-gray-700">
                 In systems thinking, leverage points are places in a system where a small change could lead to large shifts in behavior. Based on Donella Meadows' framework, we identified key leverage points in the quick commerce system.
               </p>
               
-              <div className="bg-white shadow-lg rounded-xl p-6 mb-12">
+              <div className="bg-white shadow-lg rounded-xl p-6 mb-12 animate-scale-in">
                 <div className="overflow-x-auto">
-                  <img 
-                    src="/lovable-uploads/32c92bef-4dbc-4152-92d3-1549643d0b0c.png"
-                    alt="Leverage points analysis" 
-                    className="w-full h-auto rounded-lg shadow-md mb-6"
-                  />
-                  
                   <Table>
                     <TableHeader className="bg-gray-100">
                       <TableRow>
@@ -47,36 +104,14 @@ const CaseStudy = () => {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      <TableRow className="hover:bg-gray-50">
-                        <TableCell className="font-medium">Ethical Delivery Metrics</TableCell>
-                        <TableCell>Information Flows (#6)</TableCell>
-                        <TableCell>Provides consumers visibility into ethical and sustainable delivery data</TableCell>
-                        <TableCell>Drives demand for sustainable practices</TableCell>
-                      </TableRow>
-                      <TableRow className="hover:bg-gray-50">
-                        <TableCell className="font-medium">Stable, Fair Pay Models</TableCell>
-                        <TableCell>Rules of the System (#5)</TableCell>
-                        <TableCell>Improves worker stability</TableCell>
-                        <TableCell>Reduces burnout and turnover</TableCell>
-                      </TableRow>
-                      <TableRow className="hover:bg-gray-50">
-                        <TableCell className="font-medium">Zoning Support for Micro-Hubs</TableCell>
-                        <TableCell>Structure of Stocks and Flows (#10)</TableCell>
-                        <TableCell>Optimizes local delivery</TableCell>
-                        <TableCell>Cuts emissions and traffic</TableCell>
-                      </TableRow>
-                      <TableRow className="hover:bg-gray-50">
-                        <TableCell className="font-medium">Composite KPIs</TableCell>
-                        <TableCell>Goals of the System (#3)</TableCell>
-                        <TableCell>Shifts focus from speed alone</TableCell>
-                        <TableCell>Balances speed, fairness, sustainability</TableCell>
-                      </TableRow>
-                      <TableRow className="hover:bg-gray-50">
-                        <TableCell className="font-medium">Sustainability as Brand Value</TableCell>
-                        <TableCell>Paradigm (#2)</TableCell>
-                        <TableCell>Reframes green as profitable</TableCell>
-                        <TableCell>Drives long-term value and eco-consciousness</TableCell>
-                      </TableRow>
+                      {leveragePointsData.map((item, index) => (
+                        <TableRow key={index} className="hover:bg-gray-50">
+                          <TableCell className="font-medium">{item.point}</TableCell>
+                          <TableCell>{item.category}</TableCell>
+                          <TableCell>{item.importance}</TableCell>
+                          <TableCell>{item.impact}</TableCell>
+                        </TableRow>
+                      ))}
                     </TableBody>
                   </Table>
                 </div>
@@ -97,22 +132,16 @@ const CaseStudy = () => {
       <section className="py-16 bg-gray-50" id="restructuring">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-[#1A1F2C]">Structural Redesign: Transitioning the System</h2>
+            <h2 className="text-3xl font-bold mb-8 text-[#1A1F2C] animate-fade-in">Structural Redesign: Transitioning the System</h2>
             
             <p className="text-lg mb-10 text-gray-700">
               Based on our leverage points analysis, we identified key structural changes needed to transition quick commerce to a more sustainable, equitable model while maintaining consumer convenience.
             </p>
             
-            <div className="bg-white shadow-lg rounded-xl p-6 mb-12">
+            <div className="bg-white shadow-lg rounded-xl p-6 mb-12 animate-scale-in">
               <h3 className="text-2xl font-semibold mb-6 text-[#1A1F2C]">From Current to Future Structure</h3>
               
               <div className="overflow-x-auto">
-                <img 
-                  src="/lovable-uploads/b7d08b2f-4862-4da7-923a-5a7839654511.png"
-                  alt="Structural redesign analysis" 
-                  className="w-full h-auto rounded-lg shadow-md mb-6"
-                />
-                
                 <Table>
                   <TableHeader className="bg-gray-100">
                     <TableRow>
@@ -122,41 +151,23 @@ const CaseStudy = () => {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    <TableRow className="hover:bg-gray-50">
-                      <TableCell>Centralized hub-and-spoke networks focused on speed</TableCell>
-                      <TableCell>Neighborhood-based micro-hubs with multi-modal options</TableCell>
-                      <TableCell>Offer zoning support and local subsidies for distributed storage and last-mile networks</TableCell>
-                    </TableRow>
-                    <TableRow className="hover:bg-gray-50">
-                      <TableCell>Gig-based compensation tied to algorithmic speed metrics</TableCell>
-                      <TableCell>Stable, fair-pay models with earnings floor and benefits</TableCell>
-                      <TableCell>Mandate base pay, introduce tenure rewards, and enable shared worker insurance via platforms</TableCell>
-                    </TableRow>
-                    <TableRow className="hover:bg-gray-50">
-                      <TableCell>Workers treated as replaceable contractors</TableCell>
-                      <TableCell>Workers as partners in governance and operations</TableCell>
-                      <TableCell>Set up worker councils, involve them in feedback loops and delivery planning</TableCell>
-                    </TableRow>
-                    <TableRow className="hover:bg-gray-50">
-                      <TableCell>Speed-only performance metrics</TableCell>
-                      <TableCell>Composite metrics (speed + sustainability + worker well-being)</TableCell>
-                      <TableCell>Revise internal KPIs, show ethical delivery score at consumer checkout</TableCell>
-                    </TableRow>
-                    <TableRow className="hover:bg-gray-50">
-                      <TableCell>Viewing sustainability as a cost burden</TableCell>
-                      <TableCell>Treating sustainability as a brand and economic value driver</TableCell>
-                      <TableCell>Provide carbon-labeling incentives and reward sustainable consumer choices</TableCell>
-                    </TableRow>
+                    {systemStructureData.map((item, index) => (
+                      <TableRow key={index} className="hover:bg-gray-50">
+                        <TableCell>{item.current}</TableCell>
+                        <TableCell>{item.future}</TableCell>
+                        <TableCell>{item.enableShift}</TableCell>
+                      </TableRow>
+                    ))}
                   </TableBody>
                 </Table>
               </div>
             </div>
             
-            <div className="bg-white shadow-lg rounded-xl p-6 mb-12">
+            <div className="bg-white shadow-lg rounded-xl p-6 mb-12 animate-scale-in" style={{animationDelay: '0.2s'}}>
               <h3 className="text-2xl font-semibold mb-6 text-[#1A1F2C]">Implementation Strategy</h3>
               
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-[#D3E4FD] p-5 rounded-lg">
+                <div className="bg-[#D3E4FD] p-5 rounded-lg hover-scale">
                   <h4 className="font-semibold text-lg mb-2">Short-term Actions</h4>
                   <ul className="space-y-2">
                     <li>• Introduce basic worker benefits</li>
@@ -165,7 +176,7 @@ const CaseStudy = () => {
                     <li>• Create worker feedback channels</li>
                   </ul>
                 </div>
-                <div className="bg-[#FDE1D3] p-5 rounded-lg">
+                <div className="bg-[#FDE1D3] p-5 rounded-lg hover-scale">
                   <h4 className="font-semibold text-lg mb-2">Medium-term Actions</h4>
                   <ul className="space-y-2">
                     <li>• Implement composite KPIs</li>
@@ -174,7 +185,7 @@ const CaseStudy = () => {
                     <li>• Develop carbon labeling system</li>
                   </ul>
                 </div>
-                <div className="bg-[#E5DEFF] p-5 rounded-lg">
+                <div className="bg-[#E5DEFF] p-5 rounded-lg hover-scale">
                   <h4 className="font-semibold text-lg mb-2">Long-term Vision</h4>
                   <ul className="space-y-2">
                     <li>• Industry-wide sustainable standards</li>
@@ -187,8 +198,11 @@ const CaseStudy = () => {
             </div>
             
             <div className="text-center">
-              <Button asChild className="bg-[#0EA5E9] hover:bg-[#0c8bc6]">
-                <Link to="/resources">Explore Additional Resources <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              <Button asChild className="bg-[#0EA5E9] hover:bg-[#0c8bc6] mx-2">
+                <Link to="/system-archetypes">Explore System Archetypes <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              </Button>
+              <Button asChild className="bg-[#0EA5E9] hover:bg-[#0c8bc6] mx-2">
+                <Link to="/resources">View Additional Resources <ArrowRight className="ml-1 h-4 w-4" /></Link>
               </Button>
             </div>
           </div>

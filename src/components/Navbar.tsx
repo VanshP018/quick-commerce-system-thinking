@@ -31,6 +31,7 @@ const Navbar = () => {
           <Link to="/" className="hover:text-[#0EA5E9] transition-colors">Home</Link>
           <Link to="/concepts" className="hover:text-[#0EA5E9] transition-colors">Concepts</Link>
           <Link to="/case-study" className="hover:text-[#0EA5E9] transition-colors">Case Study</Link>
+          <Link to="/system-archetypes" className="hover:text-[#0EA5E9] transition-colors">Archetypes</Link>
           <Link to="/resources" className="hover:text-[#0EA5E9] transition-colors">Resources</Link>
         </div>
         
@@ -41,6 +42,7 @@ const Navbar = () => {
               <Link to="/" className="hover:text-[#0EA5E9] transition-colors py-2" onClick={toggleMenu}>Home</Link>
               <Link to="/concepts" className="hover:text-[#0EA5E9] transition-colors py-2" onClick={toggleMenu}>Concepts</Link>
               <Link to="/case-study" className="hover:text-[#0EA5E9] transition-colors py-2" onClick={toggleMenu}>Case Study</Link>
+              <Link to="/system-archetypes" className="hover:text-[#0EA5E9] transition-colors py-2" onClick={toggleMenu}>Archetypes</Link>
               <Link to="/resources" className="hover:text-[#0EA5E9] transition-colors py-2" onClick={toggleMenu}>Resources</Link>
             </div>
           </div>

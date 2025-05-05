@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Concepts from "./pages/Concepts";
 import CaseStudy from "./pages/CaseStudy";
+import SystemArchetypes from "./pages/SystemArchetypes";
 import Resources from "./pages/Resources";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
@@ -27,6 +28,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/concepts" element={<Concepts />} />
               <Route path="/case-study" element={<CaseStudy />} />
+              <Route path="/system-archetypes" element={<SystemArchetypes />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
