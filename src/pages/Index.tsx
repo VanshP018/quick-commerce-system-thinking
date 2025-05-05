@@ -87,9 +87,11 @@ const Index = () => {
             {/* CLD Diagrams */}
             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <div className="h-14 w-14 bg-[#D3E4FD] rounded-full flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#0EA5E9]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4v16" />
-                </svg>
+                <img 
+                  src="/lovable-uploads/89cbdf76-4166-403c-abca-866d0779325b.png"
+                  alt="Causal Loop Diagram" 
+                  className="h-40 w-auto"
+                />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-[#1A1F2C]">Causal Loop Diagrams</h3>
               <p className="text-gray-700 mb-6">
@@ -209,3 +211,4 @@ const Index = () => {
 };
 
 export default Index;
+
